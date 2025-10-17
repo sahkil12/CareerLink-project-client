@@ -2,6 +2,7 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../../public/asset/lottiee/Login.json"
 import { Link } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import SocialUser from "./Social/SocialUser";
 
 const Login = () => {
     const { loginUser } = useAuth()
@@ -56,6 +57,7 @@ const Login = () => {
                 <button className="btn btn-neutral mt-4 py-6 text-lg">
                   Register
                 </button>
+                <SocialUser></SocialUser>
               </form>
             </div>
           </div>
