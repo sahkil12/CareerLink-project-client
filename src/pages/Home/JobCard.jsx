@@ -6,7 +6,7 @@ import { Link } from "react-router";
 const JobCard = ({job}) => {
     const {company_logo, company, location, applicationDeadline, jobType, description, requirements, salaryRange, _id} =job
     return (
-        <div className="p-6 border-2 border-neutral-300 rounded-lg flex flex-col h-full">
+        <div className="hover:-translate-y-2 duration-300 hover:border-blue-300 p-6 border-2 border-neutral-300 rounded-lg flex flex-col h-full">
             <div className="flex flex-col gap-6 flex-grow">
                 {/* header */}
                 <div className="flex items-center gap-4">
@@ -24,7 +24,7 @@ const JobCard = ({job}) => {
                         <h4 className="flex gap-1 text-gray-500 items-center"><IoIosTimer size={20}></IoIosTimer> {applicationDeadline}</h4>
                     </div>
                 </div>
-                <p className="text-gray-500 font-normal w-11/12 text-base/normal">{description}</p>
+                <p className="text-gray-500 mb-6 font-normal w-11/12 text-base/normal">{description}</p>
                 <div className="flex gap-2 items-center flex-wrap">
                     {
                         requirements.map((req, ind) => <span key={ind} className="px-3 py-1 text-sm font-normal text-gray-600 hover:text-blue-400 bg-blue-100 rounded-md">{req}</span>)

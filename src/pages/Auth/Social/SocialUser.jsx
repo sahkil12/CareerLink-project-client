@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 
-const SocialUser = () => {
+const SocialUser = ({from}) => {
     const { googleUser, githubUser } = useAuth()
+    const navigate = useNavigate()
     const googleAccount =()=>{
         googleUser()
         .then(result =>{
             console.log(result);
+            navigate(from || '/')
         })
         .catch(error =>{
             console.log(error);
@@ -15,6 +18,7 @@ const SocialUser = () => {
         githubUser()
         .then(result =>{
             console.log(result);
+            navigate(from || '/')
         })
         .catch(error =>{
             console.log(error);

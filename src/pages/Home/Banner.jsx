@@ -38,7 +38,7 @@ const Banner = () => {
               The{" "}
               <motion.span
                 animate={{
-                  color: ["#0EC280", "#9C27F5"],
+                  color: ["#0EC280", "#9C27F5", "#F57327"],
                   transition: { duration: 5, repeat: Infinity },
                 }}
               >

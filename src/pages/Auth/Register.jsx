@@ -1,10 +1,11 @@
 import Lottie from "lottie-react";
 import registerAnimation from "../../../public/register.json"
 import useAuth from "../../hooks/useAuth";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import SocialUser from "./Social/SocialUser";
 const Register = () => {
     const { registerUser } = useAuth()
+     const navigate = useNavigate()
     const handleRegister =e=>{
         e.preventDefault()
         const name = e.target.name.value;
@@ -14,6 +15,7 @@ const Register = () => {
         registerUser(email, password)
         .then(result =>{
           console.log(result);
+          navigate('/')
         })
         .catch(error => {
           console.log(error);
@@ -23,7 +25,7 @@ const Register = () => {
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse w-full justify-around gap-10">
+        <div className="hero-content flex-col xl:flex-row-reverse w-full justify-around gap-10">
           <div className="text-center lg:text-left">
            <Lottie animationData={registerAnimation}  className="md:w-96"></Lottie>
           </div>

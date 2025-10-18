@@ -1,11 +1,15 @@
 import Lottie from "lottie-react";
 import loginAnimation from "../../../public/Login.json"
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import SocialUser from "./Social/SocialUser";
 
 const Login = () => {
     const { loginUser } = useAuth()
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
+    const from = location.state || '/';
     const handleLogin = e=>{
         e.preventDefault()
         const email = e.target.email.value;
@@ -14,6 +18,7 @@ const Login = () => {
         loginUser(email, password)
         .then(result =>{
           console.log(result);
+          navigate(from)
         })
         .catch(error => {
           console.log(error);
@@ -22,7 +27,7 @@ const Login = () => {
     return (
          <div>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse w-full justify-around gap-10">
+        <div className="hero-content flex-col xl:flex-row-reverse w-full justify-around gap-10">
           <div className="text-center lg:text-left">
            <Lottie animationData={loginAnimation}  className="md:w-96"></Lottie>
           </div>
@@ -56,7 +61,7 @@ const Login = () => {
                 <button className="btn bg-black/90 text-white rounded-full mt-4 py-6 text-lg">
                   Login
                 </button>
-                <SocialUser></SocialUser>
+                <SocialUser from={from}></SocialUser>
               </form>
             </div>
           </div>

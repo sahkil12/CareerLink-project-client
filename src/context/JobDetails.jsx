@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { CiLocationOn } from "react-icons/ci";
 import { IoIosTimer } from "react-icons/io";
 import { PiSuitcaseSimpleLight } from "react-icons/pi";
 import { MdEmail, MdPerson } from "react-icons/md";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const JobDetails = () => {
   const job = useLoaderData();
@@ -23,7 +24,11 @@ const JobDetails = () => {
   } = job;
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
+   <div className="">
+    <div className="max-w-5xl px-5 py-10 text-xl font-semibold  mx-auto">
+        <Link to={'/'} className="flex items-center gap-2"> <FaArrowLeftLong></FaArrowLeftLong> Back</Link>
+    </div>
+     <div className="max-w-5xl mx-auto px-6 py-10">
       {/* Header */}
       <div className="flex items-center gap-5 border-b-2 border-neutral-600 pb-6">
         <img src={company_logo} alt={company} className="w-16 h-16 md:w-24 md:h-24 rounded-md" />
@@ -102,6 +107,7 @@ const JobDetails = () => {
         </button>
       </div>
     </div>
+   </div>
   );
 };
 
