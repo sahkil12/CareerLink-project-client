@@ -1,12 +1,12 @@
 import { CiLocationOn } from "react-icons/ci";
 import { IoIosTimer } from "react-icons/io";
 import { PiSuitcaseSimpleLight } from "react-icons/pi";
+import { Link } from "react-router";
 
 const JobCard = ({job}) => {
-    console.log(job);
-    const {company_logo, company, location, applicationDeadline, jobType, description, requirements, salaryRange} =job
+    const {company_logo, company, location, applicationDeadline, jobType, description, requirements, salaryRange, _id} =job
     return (
-        <div className="p-6 border border-neutral-200 rounded-lg flex flex-col h-full">
+        <div className="p-6 border-2 border-neutral-300 rounded-lg flex flex-col h-full">
             <div className="flex flex-col gap-6 flex-grow">
                 {/* header */}
                 <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ const JobCard = ({job}) => {
                 </div>
                      <h2 className="font-semibold text-xl text-gray-700">Salary : <span className="text-blue-500 text-lg">{salaryRange.min} - {salaryRange.max}</span> /{salaryRange.currency}</h2>   
                 <div className="w-full mt-auto">
-                     <button className="w-full btn bg-blue-100 hover:bg-blue-500 hover:text-black py-6 text-blue-600 text-base">Apply Now</button>
+                     <Link to={`/jobDetails/${_id}`} className="w-full btn bg-blue-100 hover:bg-blue-600 hover:text-base-200 py-6 text-blue-600 text-base">Show Details</Link>
                 </div>
             </div>
         </div>
