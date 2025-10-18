@@ -55,7 +55,7 @@ const Login = () => {
                 </fieldset>
 
                 <button className="btn btn-neutral mt-4 py-6 text-lg">
-                  Register
+                  Login
                 </button>
                 <SocialUser></SocialUser>
               </form>

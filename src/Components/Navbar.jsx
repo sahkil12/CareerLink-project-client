@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
@@ -12,7 +12,6 @@ const Navbar = () => {
     </>
   );
   const { user, logoutUser } = useAuth();
-  console.log(user);
   const handleLogout =()=>{
     logoutUser()
     .then(()=>{
@@ -23,7 +22,7 @@ const Navbar = () => {
     })  
   }
   return (
-    <div className="navbar bg-base-100 shadow-sm py-5">
+    <div className="navbar bg-base-200 shadow-sm py-5 px-1 md:px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +49,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">CareerLink</a>
+        <div className="flex items-center gap-1 logo">
+          <img src="/public/logo.png" className="w-12 h-12" alt="" />
+          <Link to={'/'} className="font-bold text-2xl md:text-4xl">CareerLink</Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -94,15 +96,9 @@ const Navbar = () => {
               <>
               <NavLink
                 to={"/login"}
-                className="btn btn-sm font-medium sm:font-bold btn-primary sm:btn-md sm:px-7 text-base"
+                className="btn btn-md font-medium sm:font-bold btn-primary px-6 text-base"
               >
                 Login
-              </NavLink>
-              <NavLink
-                to={"/register"}
-                className="btn btn-sm font-medium sm:font-bold btn-primary sm:btn-md sm:px-7 text-base"
-              >
-                Register
               </NavLink>
               </>
             )}
