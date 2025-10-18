@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
-import team1 from "../../../public/asset/team/team1.jpg";
-import team2 from "../../../public/asset/team/team2.jpg";
+// import team1 from "../../../public/asset/team/team1.jpg";
+// import team2 from "../../../public/asset/team/team2.jpg";
 import { IoMdSearch } from "react-icons/io";
+import { Typewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
   return (
@@ -12,17 +13,21 @@ const Banner = () => {
             <motion.img
               animate={{ y: [50, 100, 50] }}
               transition={{ duration: 5, repeat: Infinity }}
-              src={team1}
+              src={'/team1.jpg'}
               className="w-96 sm:w-full sm:max-w-md rounded-t-[38px] rounded-br-[38px] border-s-8 border-b-8 border-blue-700 shadow-2xl"
             />
             <motion.img
               animate={{ x: [100, 150, 100] }}
               transition={{duration: 10, repeat: Infinity, delay: 2 }}
-              src={team2}
+              src={'/team2.jpg'}
               className="hidden sm:flex w-80 sm:w-full sm:max-w-md rounded-lg rounded-t-[38px] rounded-br-[38px] border-s-8 border-b-8 border-blue-700 shadow-2xl"
             />
           </div>
-          <div className="flex-1">
+          <motion.div 
+          initial="hidden"
+          animate="show"
+          transition={{duration:1}}
+          className="flex-1">
             <motion.h1
               animate={{
                 x: [-30, 0],
@@ -37,7 +42,15 @@ const Banner = () => {
                   transition: { duration: 5, repeat: Infinity },
                 }}
               >
-                Easiest Way
+                <Typewriter
+                words={['Easiest Way', 'Fastest Way', 'Trusted Way', 'Smartest Way']}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={85}
+                deleteSpeed={85}
+                delaySpeed={2000}
+                ></Typewriter>
               </motion.span>{" "}
               <br /> to Get Your New Job
             </motion.h1>
@@ -48,9 +61,10 @@ const Banner = () => {
             {/* <button className="btn btn-primary">Find Your Job</button> */}
             <label className="input border w-11/12 input-xl focus:outline-none focus:border-none">
               <input type="text" className="text-base " placeholder="Find Your Job Here" />
-              <span className="btn btn-primary text-base "><IoMdSearch size={18}/> Search</span>
+              <span className="btn btn-primary text-base "><IoMdSearch size={18}/> 
+              Search</span>
             </label>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

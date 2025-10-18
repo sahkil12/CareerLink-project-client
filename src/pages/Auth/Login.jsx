@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import loginAnimation from "../../../public/asset/lottiee/Login.json"
+import loginAnimation from "../../../public/Login.json"
 import { Link } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import SocialUser from "./Social/SocialUser";
@@ -53,8 +53,7 @@ const Login = () => {
                     placeholder="Your Password"
                   />
                 </fieldset>
-
-                <button className="btn btn-neutral mt-4 py-6 text-lg">
+                <button className="btn bg-black/90 text-white rounded-full mt-4 py-6 text-lg">
                   Login
                 </button>
                 <SocialUser></SocialUser>

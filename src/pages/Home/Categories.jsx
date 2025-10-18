@@ -11,42 +11,42 @@ const Categories = () => {
                 <p className="text-gray-600 opacity-85">Find The Job That's Perfect For You And Match With Your Category</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
-                <aside className="border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
+                <aside className="hover:-translate-y-1 duration-200 border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5 bg-base-200">
                     <BsPcDisplayHorizontal className="text-blue-400" size={30}/>
                   <h2 className="flex flex-col gap-1">
                     <span className="font-semibold">Management</span>
                     <span className="text-gray-600 font-medium text-sm">1400 Jobs Available</span>
                   </h2>
                 </aside>
-                <aside className="border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
+                <aside className="border-2 hover:-translate-y-1 duration-200 bg-base-200 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
                     <GiLaptop  className="text-blue-400" size={30}/>
                   <h2 className="flex flex-col gap-1">
                     <span className="font-semibold">Digital Marketing</span>
                     <span className="text-gray-600 font-medium text-sm">700 Jobs Available</span>
                   </h2>
                 </aside>
-                <aside className="border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
+                <aside className="border-2 hover:-translate-y-1 duration-200 bg-base-200 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
                     <FaUserLock className="text-blue-400" size={30}/>
                   <h2 className="flex flex-col gap-1">
                     <span className="font-semibold">Security Analyst</span>
                     <span className="text-gray-600 font-medium text-sm">460 Jobs Available</span>
                   </h2>
                 </aside>
-                <aside className="border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
+                <aside className="border-2 hover:-translate-y-1 duration-200 bg-base-200 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
                     <FaClipboardList className="text-blue-400" size={30}/>
                   <h2 className="flex flex-col gap-1">
                     <span className="font-semibold">Content Writer</span>
                     <span className="text-gray-600 font-medium text-sm">890 Jobs Available</span>
                   </h2>
                 </aside>
-                <aside className="border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
+                <aside className="border-2 hover:-translate-y-1 duration-200 bg-base-200 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
                     <FaCode className="text-blue-400" size={30}/>
                   <h2 className="flex flex-col gap-1">
                     <span className="font-semibold">Web Developer</span>
                     <span className="text-gray-600 font-medium text-sm">1100 Jobs Available</span>
                   </h2>
                 </aside>
-                <aside className="border-2 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
+                <aside className="border-2 hover:-translate-y-1 duration-200 bg-base-200 rounded-lg border-neutral-200 hover:border-blue-300 w-full flex gap-3 items-center px-6 py-5">
                     <RiImageEditFill className="text-blue-400" size={30}/>
                   <h2 className="flex flex-col gap-1">
                     <span className="font-semibold">Editor</span>

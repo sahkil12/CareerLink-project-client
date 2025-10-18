@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import registerAnimation from "../../../public/asset/lottiee/register.json"
+import registerAnimation from "../../../public/register.json"
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router";
 import SocialUser from "./Social/SocialUser";
@@ -64,7 +64,7 @@ const Register = () => {
                   />
                 </fieldset>
 
-                <button className="btn btn-neutral mt-4 py-6 text-lg">
+                <button className="btn bg-black/90 text-white mt-4 py-6 text-lg rounded-full">
                   Register
                 </button>
                 <SocialUser></SocialUser>
