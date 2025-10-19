@@ -4,7 +4,7 @@ import Categories from "./Categories";
 import HotJobs from "./HotJobs";
 
 const Home = () => {
-    const jobsPromise = fetch('http://localhost:5000/jobs').then(res =>res.json())
+    const jobsPromise = fetch('http://localhost:5000/featuredJob').then(res =>res.json())
     return (
         <div className="md:w-11/12 mx-auto py-10">
             <Banner></Banner>

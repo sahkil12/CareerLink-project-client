@@ -5,8 +5,13 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to={"/"} className={"text-lg font-medium"}>
+        <NavLink to={"/"} className={"md:text-lg font-medium"}>
           Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={"/jobs"} className={"md:text-lg font-medium"}>
+          Jobs
         </NavLink>
       </li>
     </>
@@ -22,7 +27,7 @@ const Navbar = () => {
     })  
   }
   return (
-    <div className="navbar bg-base-200 shadow-sm py-5 px-1 md:px-5">
+    <div className="navbar bg-blue-50 py-5 px-1 md:w-11/12 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +49,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-3 shadow space-y-2 "
           >
             {links}
           </ul>
@@ -55,7 +60,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="flex items-center gap-9 nav-style">{links}</ul>
       </div>
       <div className="navbar-end gap-3">
         {user ? (
@@ -75,11 +80,11 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={-1}
-                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-96 shadow-lg py-6 sm:py-10 p-5"
+                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-80 shadow-lg py-6 sm:py-10 p-5"
                 >
-                  <li className="w-full items-center ">
+                  <li className="w-full items-center">
                     <img
-                    className="rounded-full w-24 h-24 mb-2"
+                    className="rounded-full w-24  md:w-32 "
                       alt="User"
                       src={user?.photoURL || '/user.png' }
                     />

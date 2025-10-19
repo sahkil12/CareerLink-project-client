@@ -11,3 +11,8 @@ body{
 .logo{
     font-family: "Cabin", sans-serif;
 }
+
+.nav-style li a.active{
+    border-bottom: 3px solid rgb(6, 80, 241);
+    padding: 8px;
+}

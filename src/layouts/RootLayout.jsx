@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 const RootLayout = () => {
     return (
         <div>
-            <header>
+            <header className="bg-blue-50">
                 <Navbar></Navbar>
             </header>
            <div className="min-h-[calc(100vh-310px)] bg-blue-50">

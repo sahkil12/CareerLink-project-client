@@ -8,6 +8,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const JobDetails = () => {
   const job = useLoaderData();
   const {
+    _id,
     title,
     company,
     company_logo,
@@ -102,9 +103,7 @@ const JobDetails = () => {
 
       {/* Apply Button */}
       <div className="mt-10">
-        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow">
-          Apply Now
-        </button>
+         <Link className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow" to={`/applyJob/${_id}`}>Apply Now</Link>
       </div>
     </div>
    </div>
