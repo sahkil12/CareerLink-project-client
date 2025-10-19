@@ -14,6 +14,11 @@ const Navbar = () => {
           Jobs
         </NavLink>
       </li>
+      <li>
+        <NavLink to={"/myApplications"} className={"md:text-lg font-medium"}>
+          My Application
+        </NavLink>
+      </li>
     </>
   );
   const { user, logoutUser } = useAuth();
@@ -79,7 +84,6 @@ const Navbar = () => {
                   </div>
                 </div>
                 <ul
-                  tabIndex={-1}
                   className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-80 shadow-lg py-6 sm:py-10 p-5"
                 >
                   <li className="w-full items-center">
