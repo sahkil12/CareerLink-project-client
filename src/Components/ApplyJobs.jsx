@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 const ApplyJobs = () => {
   const { id: jobId } = useParams();
   const { user } = useAuth();
-  console.log(user);
   const handleApply = (e) => {
     e.preventDefault();
     const form = e.target;

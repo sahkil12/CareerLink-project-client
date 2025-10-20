@@ -1,9 +1,11 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { MdOutlinePlaylistAddCircle } from "react-icons/md";
+import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth";
 
 const AddJobs = () => {
-
+    const { user } = useAuth()
     const handleAddJobForm =(e)=>{
         e.preventDefault()
         const form = e.target 
@@ -17,8 +19,17 @@ const AddJobs = () => {
         // post data 
         axios.post('http://localhost:5000/jobs', newJob)
         .then(res =>{
-            console.log(res);
-            toast.success("Your Job Added Successfully")
+            console.log(res.data);
+            if(res.data.insertedId){
+                 Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Your Jobs published successfully",
+                            showConfirmButton: false,
+                            timer: 1300,
+                          });
+                        //   form.reset()
+            }
         })
         .catch(error =>{
             console.log(error);
@@ -83,6 +94,7 @@ const AddJobs = () => {
                 <fieldset className="flex flex-col gap-2">
                   <label className="label font-medium">Hr Email</label>
                   <input
+                    defaultValue={user.email}
                     type="email"
                     name="hr_email"
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
@@ -128,6 +140,7 @@ const AddJobs = () => {
                     <option>Part-Time</option>
                     <option>Full-time</option>
                     <option>Intern</option>
+                    <option>Remote</option>
                   </select>
                 </fieldset>
                 {/* logo url */}

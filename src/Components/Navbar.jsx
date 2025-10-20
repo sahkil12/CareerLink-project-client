@@ -24,6 +24,11 @@ const Navbar = () => {
           Add Jobs
         </NavLink>
       </li>
+      <li>
+        <NavLink to={"/myPostedJobs"} className={"md:text-lg font-medium"}>
+          My Posted Jobs
+        </NavLink>
+      </li>
     </>
   );
   const { user, logoutUser } = useAuth();
