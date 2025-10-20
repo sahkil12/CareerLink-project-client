@@ -13,7 +13,6 @@ const AddJobs = () => {
         newJob.salaryRange={min, max, currency}
         newJob.requirements = addJobData.requirements.split(',').map(req => req.trim())
         newJob.responsibilities = addJobData.responsibilities.split(',').map(res => res.trim())
-        console.log(newJob);
         newJob.status = "active"
         // post data 
         axios.post('http://localhost:5000/jobs', newJob)
@@ -23,6 +22,7 @@ const AddJobs = () => {
         })
         .catch(error =>{
             console.log(error);
+            toast.error("Something wrong please try again!")
         })
     }
 

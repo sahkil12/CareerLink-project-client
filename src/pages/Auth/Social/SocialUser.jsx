@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import useAuth from "../../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const SocialUser = ({from}) => {
     const { googleUser, githubUser } = useAuth()
@@ -9,9 +10,11 @@ const SocialUser = ({from}) => {
         .then(result =>{
             console.log(result);
             navigate(from || '/')
+            toast.success("You are login successfully in CareerLink")
         })
         .catch(error =>{
             console.log(error);
+            toast.error("Something wrong please try again!")
         })
     }
     const githubAccount =()=>{
@@ -19,9 +22,11 @@ const SocialUser = ({from}) => {
         .then(result =>{
             console.log(result);
             navigate(from || '/')
+            toast.success("You are login successfully in CareerLink")
         })
         .catch(error =>{
             console.log(error);
+            toast.error("Something wrong please try again!")
         })
     }
   return (

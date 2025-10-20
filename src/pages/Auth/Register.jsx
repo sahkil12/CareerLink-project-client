@@ -3,6 +3,7 @@ import registerAnimation from "../../../public/register.json"
 import useAuth from "../../hooks/useAuth";
 import { Link, useNavigate } from "react-router";
 import SocialUser from "./Social/SocialUser";
+import toast from "react-hot-toast";
 const Register = () => {
     const { registerUser } = useAuth()
      const navigate = useNavigate()
@@ -16,9 +17,11 @@ const Register = () => {
         .then(result =>{
           console.log(result);
           navigate('/')
+          toast.success("Your Account Created successfully in CareerLink")
         })
         .catch(error => {
           console.log(error);
+          toast.error("Something wrong please try again!")
         })
     }
 

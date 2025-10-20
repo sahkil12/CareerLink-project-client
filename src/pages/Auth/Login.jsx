@@ -3,6 +3,7 @@ import loginAnimation from "../../../public/Login.json"
 import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import SocialUser from "./Social/SocialUser";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const { loginUser } = useAuth()
@@ -18,10 +19,12 @@ const Login = () => {
         loginUser(email, password)
         .then(result =>{
           console.log(result);
+          toast.success("You are login successfully in CareerLink")
           navigate(from)
         })
         .catch(error => {
           console.log(error);
+          toast.error("Something wrong please try again!")
         })  
     }
     return (

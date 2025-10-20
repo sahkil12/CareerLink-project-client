@@ -3,6 +3,7 @@ import useAuth from "../hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 const ApplyJobs = () => {
   const { id: jobId } = useParams();
@@ -33,6 +34,7 @@ const ApplyJobs = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Something wrong please try again!")
       });
   };
   return (
