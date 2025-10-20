@@ -17,7 +17,7 @@ const Banner = () => {
               className="w-96 sm:w-full sm:max-w-md rounded-t-[38px] rounded-br-[38px] border-s-8 border-b-8 border-blue-700 shadow-2xl"
             />
             <motion.img
-              animate={{ x: [100, 150, 100] }}
+              animate={{ x: [90, 140, 90] }}
               transition={{duration: 10, repeat: Infinity, delay: 2 }}
               src={'/team2.jpg'}
               className="hidden sm:flex w-80 sm:w-full sm:max-w-md rounded-lg rounded-t-[38px] rounded-br-[38px] border-s-8 border-b-8 border-blue-700 shadow-2xl"

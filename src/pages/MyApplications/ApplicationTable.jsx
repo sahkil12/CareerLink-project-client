@@ -1,8 +1,36 @@
-const ApplicationTable = ({ application, idx }) => {
+import axios from "axios";
+import Swal from "sweetalert2";
+
+const ApplicationTable = ({ application, idx, setMyApplications, myApplications }) => {
+
+
   const deleteApplication = (id) => {
-    console.log(id);
+        Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(result =>{
+      if(result.isConfirmed){
+         axios.delete(`http://localhost:5000/applications/${id}`)
+         .then(res =>{
+          if(res.data.deletedCount > 0){
+               Swal.fire("Your application has been deleted." );
+               const remaining = myApplications.filter(app => app._id !== id)
+               setMyApplications(remaining)
+          }
+         })
+         .catch(error =>{
+          console.log(error);
+         })
+      }
+    })
   };
-  console.log(application);
+
+  
   return (
     <tr>
       <th>

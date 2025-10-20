@@ -19,6 +19,11 @@ const Navbar = () => {
           My Application
         </NavLink>
       </li>
+      <li>
+        <NavLink to={"/addJobs"} className={"md:text-lg font-medium"}>
+          Add Jobs
+        </NavLink>
+      </li>
     </>
   );
   const { user, logoutUser } = useAuth();
@@ -53,14 +58,14 @@ const Navbar = () => {
             </svg>
           </div>
           <ul
-            tabIndex="-1"
-            className="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-3 shadow space-y-2 "
+            tabIndex="0"
+            className="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-3 shadow space-y-2 nav-style"
           >
             {links}
           </ul>
         </div>
         <div className="flex items-center gap-1 logo">
-          <img src="/public/logo.png" className="w-12 h-12" alt="" />
+          <img src="/logo.png" className="w-12 h-12" alt="" />
           <Link to={'/'} className="font-bold text-2xl md:text-4xl">CareerLink</Link>
         </div>
       </div>
@@ -72,7 +77,6 @@ const Navbar = () => {
               <div className="dropdown  dropdown-end">
                 <div
                   tabIndex={0}
-                  role="button"
                   className="btn btn-ghost btn-circle avatar"
                 >
                   <div className="w-14 rounded-full ring ring-primary/40 ring-offset-2">

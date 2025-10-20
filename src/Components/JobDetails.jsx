@@ -39,7 +39,7 @@ const JobDetails = () => {
           <p className="flex items-center gap-1 text-gray-500">
             <CiLocationOn size={20} color="black"/> {location}
           </p>
-        </div>
+        </div>  
       </div>
       {/* Job Info */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
