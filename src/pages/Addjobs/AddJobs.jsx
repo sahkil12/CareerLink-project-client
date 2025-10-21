@@ -24,7 +24,6 @@ const AddJobs = () => {
     axios
       .post("http://localhost:5000/jobs", newJob)
       .then((res) => {
-        console.log(res.data);
         if (res.data.insertedId) {
           Swal.fire({
             position: "center",
@@ -37,7 +36,7 @@ const AddJobs = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error("Something wrong please try again!");
       });
   };
@@ -59,6 +58,7 @@ const AddJobs = () => {
                 <input
                   type="text"
                   name="title"
+                  required
                   className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                   placeholder="Enter Job Title"
                 />
@@ -71,6 +71,7 @@ const AddJobs = () => {
                   <input
                     type="text"
                     name="company"
+                    required
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                     placeholder="Company Name"
                   />
@@ -81,6 +82,7 @@ const AddJobs = () => {
                   <input
                     type="text"
                     name="location"
+                    required
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                     placeholder="Enter Location"
                   />
@@ -91,6 +93,7 @@ const AddJobs = () => {
                   <input
                     type="text"
                     name="hr_name"
+                    required
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                     placeholder="Company Hr Name"
                   />
@@ -102,6 +105,7 @@ const AddJobs = () => {
                     defaultValue={user.email}
                     type="email"
                     name="hr_email"
+                    required
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                     placeholder="Company Hr email"
                   />
@@ -114,6 +118,7 @@ const AddJobs = () => {
                   <select
                     defaultValue="Choice Job Category"
                     name="category"
+                    required
                     className="select w-full border-2 text-base select-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                   >
                     <option disabled={true} className="text-gray-500">
@@ -136,6 +141,7 @@ const AddJobs = () => {
                   <select
                     defaultValue="Choice Job Types"
                     name="jobType"
+                    required
                     className="select w-full border-2 text-base select-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                   >
                     <option disabled={true} className="text-gray-500">
@@ -156,6 +162,7 @@ const AddJobs = () => {
                   <input
                     type="url"
                     name="company_logo"
+                    required
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                     placeholder="Company Logo"
                   />
@@ -167,6 +174,7 @@ const AddJobs = () => {
                   </label>
                   <input
                     type="date"
+                    required
                     name="applicationDeadline"
                     className="input text-base  w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                   />
@@ -181,6 +189,7 @@ const AddJobs = () => {
                   <input
                     type="number"
                     name="min"
+                    required
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                     placeholder="min salary range"
                   />
@@ -191,6 +200,7 @@ const AddJobs = () => {
                   </label>
                   <input
                     type="number"
+                    required
                     name="max"
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                     placeholder="max salary range"
@@ -203,6 +213,7 @@ const AddJobs = () => {
                   <select
                     defaultValue="Select Your Currency"
                     name="currency"
+                    required
                     className="select w-full border-2 text-base select-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
                   >
                     <option disabled={true} className="text-gray-500">
@@ -223,6 +234,7 @@ const AddJobs = () => {
                   </label>
                   <textarea
                     name="requirements"
+                    required
                     className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                     placeholder="Job Requirements (separate by comma)"
                   ></textarea>
@@ -234,6 +246,7 @@ const AddJobs = () => {
                   </label>
                   <textarea
                     name="responsibilities"
+                    required
                     className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                     placeholder="Responsibilities (separate by comma)"
                   ></textarea>
@@ -246,6 +259,7 @@ const AddJobs = () => {
                 </label>
                 <textarea
                   name="description"
+                  required
                   className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
                   placeholder="Type Your Description"
                 ></textarea>

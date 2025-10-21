@@ -8,23 +8,23 @@ const SocialUser = ({from}) => {
     const googleAccount =()=>{
         googleUser()
         .then(result =>{
-            console.log(result);
+            // console.log(result);
             navigate(from || '/')
             toast.success("You are login successfully in CareerLink")
         })
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
     }
     const githubAccount =()=>{
         githubUser()
         .then(result =>{
-            console.log(result);
+            // console.log(result);
             navigate(from || '/')
             toast.success("You are login successfully in CareerLink")
         })
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
     }
   return (

@@ -10,7 +10,6 @@ const MyPostedJobsList = ({ myPostedJobsPromise }) => {
       setMyJobs(data);
     });
   }, [myPostedJobsPromise]);
-  console.log(myJobs);
   return (
     <div className="md:w-10/12 mx-auto py-20 p-2">
       <div className="max-w-5xl px-3 pb-4 text-xl font-semibold  mx-auto">

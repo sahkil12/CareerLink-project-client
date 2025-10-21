@@ -24,7 +24,7 @@ const ApplicationTable = ({ application, idx, setMyApplications, myApplications 
           }
          })
          .catch(error =>{
-          console.log(error);
+          // console.log(error);
          })
       }
     })

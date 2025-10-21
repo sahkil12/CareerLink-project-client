@@ -9,21 +9,19 @@ const Login = () => {
     const { loginUser } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location);
     const from = location.state || '/';
     const handleLogin = e=>{
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
         loginUser(email, password)
         .then(result =>{
-          console.log(result);
+          // console.log(result);
           toast.success("You are login successfully in CareerLink")
           navigate(from)
         })
         .catch(error => {
-          console.log(error);
+          // console.log(error);
         })  
     }
     return (

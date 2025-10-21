@@ -32,7 +32,7 @@ const ApplyJobs = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error("Something wrong please try again!")
       });
   };

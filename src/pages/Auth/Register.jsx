@@ -15,12 +15,12 @@ const Register = () => {
         console.log(name, email, password);
         registerUser(email, password)
         .then(result =>{
-          console.log(result);
+          // console.log(result);
           navigate('/')
           toast.success("Your Account Created successfully in CareerLink")
         })
         .catch(error => {
-          console.log(error);
+          // console.log(error);
           toast.error("Something wrong please try again!")
         })
     }

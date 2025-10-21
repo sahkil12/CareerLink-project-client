@@ -4,12 +4,10 @@ import { Link, useLoaderData, useParams } from "react-router";
 import Swal from "sweetalert2";
 
 const ViewApplications = () => {
-  const { job_id } = useParams();
-  console.log(job_id);
+  // const { job_id } = useParams();
   const jobApplicants = useLoaderData([]);
   const handleStatusChange = (e, app_id) => {
-    console.log(e.target.value, app_id);
-
+    // data updated with axios
     axios
       .patch(`http://localhost:5000/applications/${app_id}`, {
         status: e.target.value,
@@ -26,7 +24,7 @@ const ViewApplications = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
   return (
