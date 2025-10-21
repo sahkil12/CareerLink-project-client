@@ -5,42 +5,47 @@ import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 
 const AddJobs = () => {
-    const { user } = useAuth()
-    const handleAddJobForm =(e)=>{
-        e.preventDefault()
-        const form = e.target 
-        const formData = new FormData(form)
-        const addJobData = Object.fromEntries(formData.entries())
-        const {min, max, currency, ...newJob} = addJobData 
-        newJob.salaryRange={min, max, currency}
-        newJob.requirements = addJobData.requirements.split(',').map(req => req.trim())
-        newJob.responsibilities = addJobData.responsibilities.split(',').map(res => res.trim())
-        newJob.status = "active"
-        // post data 
-        axios.post('http://localhost:5000/jobs', newJob)
-        .then(res =>{
-            console.log(res.data);
-            if(res.data.insertedId){
-                 Swal.fire({
-                            position: "center",
-                            icon: "success",
-                            title: "Your Jobs published successfully",
-                            showConfirmButton: false,
-                            timer: 1300,
-                          });
-                          form.reset()
-            }
-        })
-        .catch(error =>{
-            console.log(error);
-            toast.error("Something wrong please try again!")
-        })
-    }
+  const { user } = useAuth();
+  const handleAddJobForm = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const addJobData = Object.fromEntries(formData.entries());
+    const { min, max, currency, ...newJob } = addJobData;
+    newJob.salaryRange = { min, max, currency };
+    newJob.requirements = addJobData.requirements
+      .split(",")
+      .map((req) => req.trim());
+    newJob.responsibilities = addJobData.responsibilities
+      .split(",")
+      .map((res) => res.trim());
+    newJob.status = "active";
+    // post data
+    axios
+      .post("http://localhost:5000/jobs", newJob)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Jobs published successfully",
+            showConfirmButton: false,
+            timer: 1300,
+          });
+          form.reset();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("Something wrong please try again!");
+      });
+  };
 
   return (
     <div>
       <div className="py-20 px-2">
-        <div className="p-4  border-2 rounded-lg bg-base-100 border-gray-300 shadow-xl md:p-8 md:w-10/12 mx-auto ">
+        <div className="p-4 border-2 rounded-lg bg-base-100 border-gray-300 shadow-xl md:p-8 md:w-11/12 lg:w-10/12 mx-auto ">
           <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-3">
             <MdOutlinePlaylistAddCircle size={45} className="text-primary" />
             <span className="text-primary font-extrabold">Add</span> Your Job
@@ -48,7 +53,7 @@ const AddJobs = () => {
           </h2>
           <section>
             {/* form  */}
-            <form onSubmit={handleAddJobForm} className="pop">
+            <form onSubmit={handleAddJobForm} className="">
               <fieldset className="flex flex-col gap-2">
                 <label className="label font-medium ">Job Title</label>
                 <input
@@ -90,7 +95,7 @@ const AddJobs = () => {
                     placeholder="Company Hr Name"
                   />
                 </fieldset>
-                 {/* hr_email */}
+                {/* hr_email */}
                 <fieldset className="flex flex-col gap-2">
                   <label className="label font-medium">Hr Email</label>
                   <input
@@ -123,8 +128,8 @@ const AddJobs = () => {
                     <option>Design</option>
                   </select>
                 </fieldset>
-                  {/* job type */}
-                 <fieldset className="flex flex-col gap-2">
+                {/* job type */}
+                <fieldset className="flex flex-col gap-2">
                   <label className="label text-base font-medium">
                     Job Types
                   </label>
@@ -155,7 +160,7 @@ const AddJobs = () => {
                     placeholder="Company Logo"
                   />
                 </fieldset>
-              {/* deadline */}
+                {/* deadline */}
                 <fieldset className="flex flex-col gap-2">
                   <label className="label text-base font-medium ">
                     Deadline
@@ -169,8 +174,7 @@ const AddJobs = () => {
               </div>
               {/* salary range */}
               <div className="flex flex-col md:flex-row gap-3 pb-4 flex-wrap">
-                
-                  <fieldset className="flex flex-col gap-2 flex-1">
+                <fieldset className="flex flex-col gap-2 flex-1">
                   <label className="label text-base font-medium">
                     Min-salary range
                   </label>
@@ -178,10 +182,10 @@ const AddJobs = () => {
                     type="number"
                     name="min"
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
-                    placeholder="minimum salary range"
+                    placeholder="min salary range"
                   />
                 </fieldset>
-                  <fieldset className="flex flex-col gap-2 flex-1">
+                <fieldset className="flex flex-col gap-2 flex-1">
                   <label className="label text-base font-medium">
                     max-salary range
                   </label>
@@ -189,10 +193,10 @@ const AddJobs = () => {
                     type="number"
                     name="max"
                     className="input text-base w-full border-2 py-6 border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600"
-                    placeholder="maximum-salary range"
+                    placeholder="max salary range"
                   />
                 </fieldset>
-                 <fieldset className="flex flex-col gap-2 flex-1">
+                <fieldset className="flex flex-col gap-2 flex-1">
                   <label className="label text-base font-medium">
                     Currency
                   </label>
@@ -214,26 +218,32 @@ const AddJobs = () => {
               {/* requirements */}
               <div className="flex flex-col md:flex-row gap-4">
                 <fieldset className="flex flex-col gap-2 flex-1">
-                <label className="label text-base font-medium ">Job Requirements</label>
-                <textarea
-                  name="requirements"
-                  className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
-                  placeholder="Job Requirements (separate by comma)"
-                ></textarea>
-              </fieldset>
-              {/* responsibilities */}
-              <fieldset className="flex flex-col gap-2 flex-1">
-                <label className="label text-base font-medium ">Responsibilities</label>
-                <textarea
-                  name="responsibilities"
-                  className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
-                  placeholder="Responsibilities (separate by comma)"
-                ></textarea>
-              </fieldset>
+                  <label className="label text-base font-medium ">
+                    Job Requirements
+                  </label>
+                  <textarea
+                    name="requirements"
+                    className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
+                    placeholder="Job Requirements (separate by comma)"
+                  ></textarea>
+                </fieldset>
+                {/* responsibilities */}
+                <fieldset className="flex flex-col gap-2 flex-1">
+                  <label className="label text-base font-medium ">
+                    Responsibilities
+                  </label>
+                  <textarea
+                    name="responsibilities"
+                    className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
+                    placeholder="Responsibilities (separate by comma)"
+                  ></textarea>
+                </fieldset>
               </div>
               {/* single field */}
               <fieldset className="flex flex-col gap-2">
-                <label className="label text-base font-medium ">Description</label>
+                <label className="label text-base font-medium ">
+                  Description
+                </label>
                 <textarea
                   name="description"
                   className="textarea w-full border-2 text-lg border-gray-200 bg-gray-100 focus:outline-none focus:border-gray-600 "
@@ -241,7 +251,7 @@ const AddJobs = () => {
                 ></textarea>
               </fieldset>
               {/* button */}
-              <button className="mt-6 rounded-full  w-full py-3 bg-primary/90 text-xl font-medium text-white">
+              <button className="mt-6 rounded-md  w-full py-3 bg-primary/90 text-xl font-medium text-white">
                 Add Jobs
               </button>
             </form>

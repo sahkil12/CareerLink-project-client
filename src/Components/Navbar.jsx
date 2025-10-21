@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router";
 import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const links = (
@@ -35,17 +36,17 @@ const Navbar = () => {
   const handleLogout =()=>{
     logoutUser()
     .then(()=>{
-      console.log('logout successful');
+      toast.success('logout successful');
     })
     .catch(error=>{
       console.log(error);
     })  
   }
   return (
-    <div className="navbar bg-blue-50 py-5 px-1 md:w-11/12 mx-auto">
+    <div className="navbar bg-blue-50 py-5 px-3 md:w-11/12 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -74,10 +75,10 @@ const Navbar = () => {
           <Link to={'/'} className="font-bold text-2xl md:text-4xl">CareerLink</Link>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="flex items-center gap-9 nav-style">{links}</ul>
+      <div className="navbar-center hidden xl:flex ">
+        <ul className="flex items-center justify-center gap-9 nav-style">{links}</ul>
       </div>
-      <div className="navbar-end gap-3">
+      <div className="navbar-end gap-3 ">
         {user ? (
               <div className="dropdown  dropdown-end">
                 <div
@@ -93,20 +94,15 @@ const Navbar = () => {
                   </div>
                 </div>
                 <ul
-                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-80 shadow-lg py-6 sm:py-10 p-5"
+                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-80 shadow-lg py-4 sm:py-10 p-5"
                 >
                   <li className="w-full items-center">
-                    <img
-                    className="rounded-full w-24  md:w-32 "
-                      alt="User"
-                      src={user?.photoURL || '/user.png' }
-                    />
                     <span className="pop text-lg font-semibold text-secondary">{user.displayName}</span>
                     <span className="text-base md:text-lg font-semibold">{user?.email}</span>
                   </li>
                   <div className="border border-primary/60 w-full"></div>
                   <li className="w-full items-center">
-                    <button onClick={handleLogout} className="btn py-6 w-full text-base bg-primary/90 text-white">Logout</button>
+                    <button onClick={handleLogout} className="btn w-full text-base btn-primary text-white px-7">Logout</button>
                   </li>
                 </ul>
               </div>

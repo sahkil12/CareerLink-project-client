@@ -41,12 +41,12 @@ const ApplyJobs = () => {
         <div className="max-w-3xl px-5 py-10 text-xl font-semibold  mx-auto">
         <Link to={`/jobDetails/${jobId}`} className="flex items-center gap-2"> <FaArrowLeftLong></FaArrowLeftLong> Back</Link>
     </div>
-      <section className="p-5">
+      <section className="p-2">
         <form
           onSubmit={handleApply}
-          className="container w-full max-w-3xl p-8 md:p-12 mx-auto space-y-6 rounded-md shadow bg-gray-50"
+          className="container w-full max-w-3xl p-4 py-10 md:p-12 mx-auto space-y-6 rounded-md shadow bg-gray-50"
         >
-          <h2 className="w-full text-center text-2xl md:text-3xl text-primary/90 border-b pb-4 border-neutral-300 font-bold leading-tight mb-8">
+          <h2 className="w-full text-center text-2xl/normal md:text-3xl/relaxed text-primary/90 border-b pb-4 border-neutral-300 font-bold mb-8">
             Apply for this job with your details
           </h2>
           {/* name */}
@@ -56,7 +56,7 @@ const ApplyJobs = () => {
               name="name"
               type="text"
               placeholder="Your name"
-              required=""
+              required
               className="block w-full px-3 py-4 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-sky-600 bg-gray-100"
             />
           </div>
@@ -68,7 +68,7 @@ const ApplyJobs = () => {
               type="email"
               placeholder="Your email"
               defaultValue={user.email}
-              required=""
+              required
               className="block w-full px-3 py-4 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-sky-600 bg-gray-100"
             />
           </div>
@@ -79,7 +79,7 @@ const ApplyJobs = () => {
               name="address"
               type="text"
               placeholder="Your present address"
-              required=""
+              required
               className="block w-full px-3 py-4 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-sky-600 bg-gray-100"
             />
           </div>
@@ -90,7 +90,7 @@ const ApplyJobs = () => {
               name="github"
               type="url"
               placeholder="Your github account link"
-              required=""
+              required
               className="block w-full px-3 py-4 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-sky-600 bg-gray-100"
             />
           </div>
@@ -101,7 +101,7 @@ const ApplyJobs = () => {
               name="linkedin"
               type="url"
               placeholder="Your linkedin account link"
-              required=""
+              required
               className="block w-full px-3 py-4 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-sky-600 bg-gray-100"
             />
           </div>

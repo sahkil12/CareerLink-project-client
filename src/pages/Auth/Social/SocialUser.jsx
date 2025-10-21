@@ -14,7 +14,6 @@ const SocialUser = ({from}) => {
         })
         .catch(error =>{
             console.log(error);
-            toast.error("Something wrong please try again!")
         })
     }
     const githubAccount =()=>{
@@ -26,14 +25,13 @@ const SocialUser = ({from}) => {
         })
         .catch(error =>{
             console.log(error);
-            toast.error("Something wrong please try again!")
         })
     }
   return (
     <div className="space-y-4 mt-6">
       <div className="divider text-base ">OR</div>
       {/* Google */}
-      <button onClick={googleAccount} className="btn py-7 rounded-full border text-base border-neutral-300 bg-neutral-100 hover:bg-neutral-200 w-full text-black">
+      <button onClick={googleAccount} className="btn py-6 md:py-7 rounded-full border text-base border-neutral-300 bg-neutral-100 hover:bg-neutral-200 w-full text-black">
         <svg
           aria-label="Google logo"
           width="18"
@@ -65,7 +63,7 @@ const SocialUser = ({from}) => {
       </button>
 
       {/* GitHub */}
-      <button onClick={githubAccount} className="btn py-7 rounded-full border text-base hover:bg-black/95 bg-black w-full text-white border-black">
+      <button onClick={githubAccount} className="btn py-6 md:py-7 rounded-full border text-base hover:bg-black/95 bg-black w-full text-white border-black">
         <svg
           aria-label="GitHub logo"
           width="18"

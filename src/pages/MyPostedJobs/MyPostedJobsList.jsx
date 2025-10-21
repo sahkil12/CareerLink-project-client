@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const MyPostedJobsList = ({ myPostedJobsPromise }) => {
@@ -12,7 +13,15 @@ const MyPostedJobsList = ({ myPostedJobsPromise }) => {
   console.log(myJobs);
   return (
     <div className="md:w-10/12 mx-auto py-20 p-2">
-      <h2>my post {myJobs.length}</h2>
+      <div className="max-w-5xl px-3 pb-4 text-xl font-semibold  mx-auto">
+              <Link to={'/'} className="flex items-center gap-2"> <FaArrowLeftLong></FaArrowLeftLong> Back</Link>
+          </div>
+         {
+        myJobs.length < 1 ? <div className="flex flex-col items-center justify-center">
+            <p className="text-3xl my-10 font-medium text-gray-600">You don't Post any jobs yet</p>
+            <Link className="btn btn-primary px-7 py-6 text-base" to={'/addJobs'}>Add Jobs</Link>
+        </div> : 
+        
       <div className="overflow-x-auto my-10 ">
         <table className="table border-2 text-base  border-neutral-200">
           {/* head */}
@@ -38,6 +47,7 @@ const MyPostedJobsList = ({ myPostedJobsPromise }) => {
           </tbody>
         </table>
       </div>
+        }
     </div>
   );
 };

@@ -24,7 +24,6 @@ const Login = () => {
         })
         .catch(error => {
           console.log(error);
-          toast.error("Something wrong please try again!")
         })  
     }
     return (
@@ -36,20 +35,22 @@ const Login = () => {
           </div>
           <div className="card bg-base-100 w-full max-w-2xl shrink-0 shadow-2xl border border-gray-200">
             <div className="card-body py-10 ">
-              <h1 className="text-4xl text-center mb-3 font-bold">
+              <h1 className=" text-2xl md:text-4xl text-center mb-3 font-bold">
                Login To Your<span className="text-primary"> Account</span>
               </h1>
                <p className="text-center text-base mb-7 font-medium">Don't have an Account ? Please <Link to={'/register'} className="text-lg text-primary font-bold">Register</Link></p>
               <form onSubmit={handleLogin} className="fieldset space-y-3">
+                {/* email */}
                 <fieldset className="space-y-1.5">
                   <label className="label text-base font-medium">Email</label>
                   <input
                     type="email"
                     name="email"
-                    className="input w-full py-7 text-lg"
+                    className="input w-full py-5 md:py-7 text-base md:text-lg"
                     placeholder="Your Email"
                   />
                 </fieldset>
+                {/* password */}
                 <fieldset className="space-y-1.5">
                   <label className="label text-base font-medium">
                     Password
@@ -57,11 +58,11 @@ const Login = () => {
                   <input
                     name="password"
                     type="password"
-                    className="input w-full py-7 text-lg"
+                    className="input w-full py-5 md:py-7 text-base md:text-lg"
                     placeholder="Your Password"
                   />
                 </fieldset>
-                <button className="btn bg-black/90 text-white rounded-full mt-4 py-6 text-lg">
+                <button className="btn bg-black/90 text-white rounded-full mt-4 py-6 text-base md:text-lg">
                   Login
                 </button>
                 <SocialUser from={from}></SocialUser>

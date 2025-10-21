@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ApplicationTable from "./ApplicationTable";
-import { useNavigation } from "react-router";
+import { Link, useNavigation } from "react-router";
 import Loader from "../../Components/Loader";
 
 const ApplicationList = ({ myApplicationPromise }) => {
@@ -16,7 +16,13 @@ const ApplicationList = ({ myApplicationPromise }) => {
   }
   return (
     <div className="md:w-10/12 mx-auto py-20">
-      <div className="overflow-x-auto">
+      {
+        myApplications.length < 1 ? <div className="flex flex-col items-center justify-center">
+            <p className="text-3xl my-5 font-medium text-gray-600">You are not apply any jobs</p>
+            <Link className="btn btn-primary px-7 py-6 text-base" to={'/jobs'}>Apply Jobs</Link>
+        </div> :
+
+          <div className="overflow-x-auto">
         <table className="table text-base">
           {/* head */}
           <thead className="text-base">
@@ -41,6 +47,7 @@ const ApplicationList = ({ myApplicationPromise }) => {
           </tbody>
         </table>
       </div>
+      }
     </div>
   );
 };
