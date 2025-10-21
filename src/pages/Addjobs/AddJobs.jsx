@@ -28,7 +28,7 @@ const AddJobs = () => {
                             showConfirmButton: false,
                             timer: 1300,
                           });
-                        //   form.reset()
+                          form.reset()
             }
         })
         .catch(error =>{
