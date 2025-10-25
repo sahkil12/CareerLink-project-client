@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Banner from "./Banner";
 import Categories from "./Categories";
 import HotJobs from "./HotJobs";
+import MillionsJobs from "./MillionsJobs";
 
 const Home = () => {
     const jobsPromise = fetch('http://localhost:5000/featuredJob').then(res =>res.json())
@@ -12,6 +13,7 @@ const Home = () => {
             <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
                 <HotJobs jobsPromise={jobsPromise}></HotJobs>
             </Suspense>
+            <MillionsJobs></MillionsJobs>
         </div>
     );
 };
