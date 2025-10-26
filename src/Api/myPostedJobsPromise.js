@@ -1,6 +1,10 @@
 
-export const myPostedJobsPromise = (email)=>{
+export const myPostedJobsPromise = (email, accessToken)=>{
 
-    return fetch(`http://localhost:5000/jobs?email=${email}`)
+    return fetch(`https://career-link-project-server.vercel.app/jobs?email=${email}`,{
+        headers:{
+            authorization : `Bearer ${accessToken}`
+        }
+    })
     .then(res => res.json())
 }

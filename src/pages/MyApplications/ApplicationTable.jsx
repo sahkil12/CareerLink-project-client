@@ -15,7 +15,7 @@ const ApplicationTable = ({ application, idx, setMyApplications, myApplications 
       confirmButtonText: "Yes, delete it!"
     }).then(result =>{
       if(result.isConfirmed){
-         axios.delete(`http://localhost:5000/applications/${id}`)
+         axios.delete(`https://career-link-project-server.vercel.app/applications/${id}`)
          .then(res =>{
           if(res.data.deletedCount > 0){
                Swal.fire("Your application has been deleted." );

@@ -22,7 +22,7 @@ const AddJobs = () => {
     newJob.status = "active";
     // post data
     axios
-      .post("http://localhost:5000/jobs", newJob)
+      .post("https://career-link-project-server.vercel.app/jobs", newJob)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

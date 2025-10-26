@@ -18,7 +18,7 @@ const ApplyJobs = () => {
       ...applyDetails,
     };
     axios
-      .post("http://localhost:5000/application", application)
+      .post("https://career-link-project-server.vercel.app/application", application)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

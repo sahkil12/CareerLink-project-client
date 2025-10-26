@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
 import { PiSuitcaseSimpleLight } from "react-icons/pi";
 
-const MyState = ({ user, myApplicationPromise }) => {
-  const [myApplications, setMyApplications] = useState([]);
+const MyState = ({ user }) => {
 
-  useEffect(() => {
-    myApplicationPromise.then((data) => setMyApplications(data));
-  }, [myApplicationPromise]);
   return (
     <div className="md:w-10/12 mx-auto flex items-center justify-center py-14 ">
       <div className="stats shadow p-3 md:p-10 gap-3 md:gap-10 bg-base-100">
@@ -16,7 +11,7 @@ const MyState = ({ user, myApplicationPromise }) => {
           </div>
           <div className="stat-title text-sm font-medium">Total Job Apply</div>
           <div className="stat-value text-primary">
-            {myApplications.length} Job
+             Job
           </div>
           <div className="stat-desc">11% more than last month</div>
         </div>

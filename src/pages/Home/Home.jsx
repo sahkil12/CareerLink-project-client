@@ -5,7 +5,7 @@ import HotJobs from "./HotJobs";
 import MillionsJobs from "./MillionsJobs";
 
 const Home = () => {
-    const jobsPromise = fetch('http://localhost:5000/featuredJob').then(res =>res.json())
+    const jobsPromise = fetch('https://career-link-project-server.vercel.app/featuredJob').then(res =>res.json())
     return (
         <div className="md:w-11/12 mx-auto py-10">
             <Banner></Banner>

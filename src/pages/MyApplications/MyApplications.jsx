@@ -2,13 +2,14 @@ import { Suspense } from "react";
 import ApplicationList from "./ApplicationList";
 import Loader from "../../Components/Loader";
 import useAuth from "../../hooks/useAuth";
-import { myApplicationPromise } from "../../Api/applicationPromise";
 import MyState from "./MyState";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link } from "react-router";
+import UserApplicationApi from "../../Api/UserApplicationApi";
 
 const MyApplications = () => {
   const { user } = useAuth();
+  const { myApplicationPromise } = UserApplicationApi()
   return (
     <div className="py-10">
       <div className="max-w-5xl px-3 text-xl font-semibold  mx-auto">
@@ -17,12 +18,9 @@ const MyApplications = () => {
           <FaArrowLeftLong></FaArrowLeftLong> Back
         </Link>
       </div>
-      <Suspense fallback={<Loader></Loader>}>
         <MyState
           user={user}
-          myApplicationPromise={myApplicationPromise(user.email)}
         ></MyState>
-      </Suspense>
       <Suspense fallback={<Loader></Loader>}>
         <ApplicationList
           myApplicationPromise={myApplicationPromise(user.email)}

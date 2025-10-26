@@ -9,7 +9,7 @@ const ViewApplications = () => {
   const handleStatusChange = (e, app_id) => {
     // data updated with axios
     axios
-      .patch(`http://localhost:5000/applications/${app_id}`, {
+      .patch(`https://career-link-project-server.vercel.app/applications/${app_id}`, {
         status: e.target.value,
       })
       .then((res) => {
