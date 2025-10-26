@@ -1,21 +1,54 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import useAuth from '../hooks/useAuth';
 
 const Footer = () => {
+  
+  const { user } = useAuth();
+
+  const links = (
+    <>
+      <li>
+        <NavLink to={"/"} className={""}>
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={"/jobs"} className={""}>
+          Jobs
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={"/myApplications"} className={""}>
+          My Application
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={"/addJobs"} className={""}>
+          Add Jobs
+        </NavLink>
+      </li>
+    {
+      user && <li>
+        <NavLink to={"/myPostedJobs"} className={""}>
+          My Posted Jobs
+        </NavLink>
+      </li>
+    }
+    </>
+  );
     return (
         <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
   <aside>
     <div className="flex items-center gap-1 logo">
-          <img src="/public/logo.png" className="w-12 h-12" alt="" />
+          <img src="/logo.png" className="w-12 h-12" alt="" />
           <Link to={'/'} className="font-bold text-2xl md:text-4xl">CareerLink</Link>
         </div>
   </aside>
   <nav>
     <h6 className="footer-title">Pages</h6>
-    <a className="link link-hover">Home</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Companies</a>
-    <a className="link link-hover">Job Category</a>
+   <ul className='space-y-2'>
+    {links}
+   </ul>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
