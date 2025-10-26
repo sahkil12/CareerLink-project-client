@@ -12,12 +12,14 @@ import MyApplications from "../pages/MyApplications/MyApplications";
 import AddJobs from "../pages/Addjobs/AddJobs";
 import MyPostedJobs from "../pages/MyPostedJobs/MyPostedJobs";
 import ViewApplications from "../pages/MyPostedJobs/ViewApplications";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout></RootLayout>,
+    errorElement: <ErrorPage></ErrorPage> ,
     children: [
         {
             index: true,
