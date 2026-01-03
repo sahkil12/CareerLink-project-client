@@ -82,27 +82,27 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-3 ">
         {user ? (
-              <div className="dropdown  dropdown-end">
+              <div className="dropdown dropdown-end">
                 <div
                   tabIndex={0}
-                  className="btn btn-ghost btn-circle avatar"
+                  className="btn btn-lg btn-ghost btn-circle avatar"
                 >
-                  <div className="w-14 rounded-full ring ring-primary/40 ring-offset-2">
+                  <div className="rounded-full ring-2 ring-primary/40 ring-offset-2">
                     <img
-                    className="rounded-full w-10 h-10"
+                    className="rounded-full w-12 h-12"
                       alt="User"
                       src={user?.photoURL || '/user.png' }
                     />
                   </div>
                 </div>
                 <ul
-                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-80 shadow-lg py-4 sm:py-10 p-5"
+                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 w-72 md:w-80 shadow-lg py-4 sm:py-10 p-5"
                 >
                   <li className="w-full items-center">
                     <span className="pop text-lg font-semibold text-secondary">{user.displayName}</span>
                     <span className="text-base md:text-lg font-semibold">{user?.email}</span>
                   </li>
-                  <div className="border border-primary/60 w-full"></div>
+                  <div className="border border-primary/60 w-full mb-5"></div>
                   <li className="w-full items-center">
                     <button onClick={handleLogout} className="btn w-full text-base btn-primary text-white px-7">Logout</button>
                   </li>
