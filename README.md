@@ -19,7 +19,6 @@ CareerLink is a modern job portal web application where users can explore job op
 - Responsive design for mobile and desktop
 - Clean and modern user interface
 
----
 
 ## 🛠️ Technologies Used
 
@@ -64,15 +63,21 @@ Screenshots can be added here later to showcase the UI.
 
 Follow the steps below to run the project locally:
 
-```bash
 # Clone the repository
+```bash
 git clone https://github.com/sahkil12/CareerLink-project-client.git
+```
 
 # Navigate to the project directory
+```bash
 cd CareerLink-project-client
+```
 
 # Install dependencies
+```bash
 npm install
-
+```
 # Run the project
+```bash
 npm run dev
+```
