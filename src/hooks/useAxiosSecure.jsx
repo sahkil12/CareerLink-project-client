@@ -1,5 +1,6 @@
 import axios from "axios";
 import useAuth from "./useAuth";
+import toast from "react-hot-toast";
 
 const axiosInstance = axios.create({
     baseURL: 'https://career-link-project-server.vercel.app'
@@ -19,10 +20,9 @@ const useAxiosSecure = () => {
     axiosInstance.interceptors.response.use(response =>{
         return response
     },(error)=>{
-        console.log(error);
         if(error.status === 401 || error.status === 403){
             logoutUser()
-            .then(()=> console.log('log out successfully for bad auth'))
+            .then(()=> toast.error('log out successfully for bad auth'))
             .catch(err =>{
                 console.log(err);
             })
