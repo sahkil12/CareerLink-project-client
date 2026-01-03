@@ -15,7 +15,7 @@ const ApplicationList = ({ myApplicationPromise }) => {
     return <Loader></Loader>
   }
   return (
-    <div className="md:w-10/12 mx-auto py-20">
+    <div className="md:w-10/12 mx-auto py-4">
       {
         myApplications.length < 1 ? <div className="flex flex-col items-center justify-center">
             <p className="text-3xl my-5 font-medium text-gray-600">You are not apply any jobs</p>
