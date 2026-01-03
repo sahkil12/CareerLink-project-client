@@ -11,7 +11,7 @@ const MyPostedJobsList = ({ myPostedJobsPromise }) => {
     });
   }, [myPostedJobsPromise]);
   return (
-    <div className="md:w-10/12 mx-auto py-20 p-2">
+    <div className="md:w-10/12 mx-auto py-12 p-2">
       <div className="md:w-10/12 px-2 pb-4 text-xl font-semibold ">
               <Link to={'/'} className="flex items-center gap-2"> <FaArrowLeftLong></FaArrowLeftLong> Back</Link>
           </div>
@@ -21,7 +21,7 @@ const MyPostedJobsList = ({ myPostedJobsPromise }) => {
             <Link className="btn btn-primary px-7 py-6 text-base" to={'/addJobs'}>Add Jobs</Link>
         </div> : 
         
-      <div className="overflow-x-auto my-10 ">
+      <div className="overflow-x-auto my-4">
         <table className="table border-2 text-base  border-neutral-200">
           {/* head */}
           <thead className="text-lg bg-blue-100">
